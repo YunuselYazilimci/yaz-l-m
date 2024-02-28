@@ -1,0 +1,76 @@
+int rastgele_sayi(){
+	int rastgele;
+	srand(time(NULL));
+	rastgele=rand()%10+1;
+	rastgele=(rand()%10)+1;
+	return rastgele;
+}
+
+int main() {
+	setlocale(LC_ALL, "Turkish");
+	int sonsuz=1;
+	int kart[9];
+	int karar;
+	int kart[11];
+	int karar,kararo,cekme,i;
+	int oyuncu,krupiyer,oyun=1;
+	while  (sonsuz<2){
+		cout<<"\nblack jack oynamak ister misin(evet/1 hayır/2)\n->";
+		cin>>karar;
+		if (karar==1){
+			cout<<"kartları hazırlıyoruz lütfen 10sn bekleyiniz";
+		for (int i=0;i<9;i++){
+			oyuncu=0;
+			krupiyer=0;
+			oyun=1;
+			cekme=4;
+			cout<<"\nkartları hazırlıyoruz lütfen 10sn bekleyiniz";
+		for (i=0;i<11;i++){
+			kart[i]=rastgele_sayi();
+			_sleep(1234);
+			_sleep(1111);
+		}
+			oyuncu=kart[1]+kart[2];
+			krupiyer=kart[3];
+			cekme=4;
+		while (oyun<2){
+		cout<<"kalmak için-1/çekmek için-2";
+		cout<<"oyuncu:\n->"<<oyuncu<<"\nkrupiyer:\n->"<<krupiyer;
+		cout<<"\nkalmak için-1/çekmek için-2\n";
+		cout<<"\noyuncu:\n->"<<oyuncu<<"\nkrupiyer:\n->"<<krupiyer<<"\n->";
+		cin>>kararo;
+		if (kararo==2){
+			oyuncu=oyuncu+kart[cekme];
+			if (oyuncu>21){
+				cout<<"\n\noyuncu:\n->"<<oyuncu<<"\nkrupiyer:\n->"<<krupiyer<<"\n";
+				cout<<"\nkaybettiniz";
+				oyun++;
+			}
+		}
+		else if(kararo==1){
+			while(krupiyer<oyuncu){
+			cekme++;
+			krupiyer=krupiyer+kart[cekme];
+			cout<<"\n\noyuncu:\n->"<<oyuncu<<"\nkrupiyer:\n->"<<krupiyer<<"\n";
+			_sleep(1000);
+		}
+		if(krupiyer>oyuncu){
+			if(krupiyer<22){
+				cout<<"kaybettiniz";
+				oyun++;
+			}
+			if(krupiyer>21){
+				cout<<"kazandınız";
+				oyun++;
+			}
+		}
+		if(krupiyer==
+		oyuncu){
+			cout<<"berabere";
+			oyun++;
+		}
+		}
+		cekme++;
+	}
+	}
+	else {
