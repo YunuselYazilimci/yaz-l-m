@@ -1,0 +1,145 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include<locale.h>
+#pragma warning (disable:4996)
+using namespace std;
+
+void toplama() {
+	int s2, sonuc, sayaç = 1;
+	int yanlış = 0;
+	srand(time(NULL));
+	s2 = 1 + rand() % 1000;
+	int s1;
+	s1 = 1 + rand() % 1000;
+	cout << s1 << "+" << s2 << "=" << "?\n->";
+	while (sayaç < 2) {
+		cin >> sonuc;
+		if (sonuc == s1 + s2) {
+			cout << "DOĞRU!TEBRİKLER!";
+			break;
+		}
+		else {
+			yanlış = yanlış + 1;
+			cout << "tekrar deneyiniz\n->";
+		}
+	}
+	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
+	return;
+}
+
+void çarpma() {
+	int s2, sonuc, sayaç = 1;
+	int yanlış = 0;
+	srand(time(NULL));
+	s2 = 1 + rand() % 25;
+	int s1;
+	s1 = 1 + rand() % 25;
+	cout << s1 << "*" << s2 << "=" << "?\n->";
+	while (sayaç < 2) {
+		cin >> sonuc;
+		if (sonuc == s1 * s2) {
+			cout << "DOĞRU!TEBRİKLER!";
+			break;
+		}
+		else {
+			yanlış = yanlış + 1;
+			cout << "tekrar deneyiniz\n->";
+		}
+	}
+	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
+	return;
+}
+
+void çıkarma() {
+	int s2, sonuc, sayaç = 1;
+	int yanlış = 0;
+	srand(time(NULL));
+	s2 = 1 + rand() % 1000;
+	int s1;
+	s1 = 1 + rand() % 1000;
+	cout << s1 << "-" << s2 << "=" << "?\n->";
+	while (sayaç < 2) {
+		cin >> sonuc;
+		if (sonuc == s1 - s2) {
+			cout << "DOĞRU!TEBRİKLER!";
+			break;
+		}
+		else {
+			yanlış = yanlış + 1;
+			cout << "tekrar deneyiniz\n->";
+		}
+	}
+	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
+	return;
+}
+
+void bölme() {
+	int s2, sonuc, sayaç = 1;
+	int yanlış = 0;
+	srand(time(NULL));
+	s2 = 1 + rand() % 1000;
+	int s1;
+	s1 = 1 + rand() % 100;
+	cout << "bölmede sadece tam kısmını yazmanız yeterlidir:)\n";
+	if (s1 < s2) {
+		cout << s2 << "/" << s1 << "=" << "?\n->";
+		while (sayaç < 2) {
+			cin >> sonuc;
+			if (sonuc == s2 / s1) {
+				cout << "DOĞRU!TEBRİKLER!";
+				break;
+			}
+			else {
+				yanlış = yanlış + 1;
+				cout << "tekrar deneyiniz\n->";
+			}
+		}
+	}
+	else {
+		cout << s1 << "/" << s2 << "=" << "?\n->";
+		while (sayaç < 2) {
+			cin >> sonuc;
+			if (sonuc == s1 / s2) {
+				cout << "DOĞRU!TEBRİKLER!";
+				break;
+			}
+			else {
+				yanlış = yanlış + 1;
+				cout << "tekrar deneyiniz\n->";
+			}
+		}
+	}
+	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
+	return;
+	return;
+}
+
+void main() {
+	setlocale(LC_ALL, "Turkish");
+	cout << "hesaplama oyunuma hoş geldiniz";
+	int karar = 1;
+	while (karar < 2) {
+		cout << "\ntoplma oyunu için 1\nçıkarma oyunu için 2\nçarpma oyunu için 3\nbölme oyunu için 4\nçıkmak için 5\n";
+		int seçim;
+		cin >> seçim;
+		switch (seçim) {
+		case 1:
+			toplama();
+			break;
+		case 2:
+			çıkarma();
+			break;
+		case 3:
+			çarpma();
+			break;
+		case 4:
+			bölme();
+			break;
+		case 5:
+			karar = 3;
+			break;
+		}
+	}
+	return;
+}
