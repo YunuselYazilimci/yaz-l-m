@@ -25,7 +25,7 @@ int main() {
 			krupiyer = 0;
 			oyun = 1;
 			cekme = 4;
-			cout << "\nkartları hazırlıyoruz lütfen 10sn bekleyiniz";
+			cout << "\nkartları hazırlıyoruz lütfen 10sn bekleyiniz yunus sibili";
 			for (i = 0; i < 15; i++) {
 				kart[i] = rastgele_sayi();
 				cout << "  _  " << kart[i];
