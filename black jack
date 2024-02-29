@@ -7,78 +7,79 @@
 #include<time.h>
 using namespace std;
 
-int rastgele_sayi(){
+int rastgele_sayi() {
 	int rastgele;
 	srand(time(NULL));
-	rastgele=(rand()%10)+1;
+	rastgele = (rand() % 11) + 1;
 	return rastgele;
 }
 
 int main() {
 	setlocale(LC_ALL, "Turkish");
-	int sonsuz=1,oyuncu,krupiyer,oyun=1,karar,kararo,cekme,i,kart[16],kazanc=0,kaybetme=0,berabere=0;
-	while  (sonsuz<2){
-		cout<<"\n\nblack jack oynamak ister misin(evet/1 hayır/2)\n->";
-		cin>>karar;
-		if (karar==1){
-			oyuncu=0;
-			krupiyer=0;
-			oyun=1;
-			cekme=4;
-			cout<<"\nkartları hazırlıyoruz lütfen 10sn bekleyiniz";
-		for (i=0;i<15;i++){
-			kart[i]=rastgele_sayi();
-			_sleep(1111);
-		}
-			oyuncu=kart[1]+kart[2];
-			krupiyer=kart[3];
-			cekme=4;
-		while (oyun<2){
-		cout<<"\nkalmak için-1/çekmek için-2\n";
-		cout<<"\noyuncu:\n->"<<oyuncu<<"\nkrupiyer:\n->"<<krupiyer<<"\n->";
-		cin>>kararo;
-		if (kararo==2){
-			oyuncu=oyuncu+kart[cekme];
-			if (oyuncu>21){
-				cout<<"\n\noyuncu:\n->"<<oyuncu<<"\nkrupiyer:\n->"<<krupiyer<<"\n";
-				kaybetme=kaybetme+1;
-				cout<<"\nkaybettiniz";
-				oyun++;
+	int sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[16], kazanc = 0, kaybetme = 0, berabere = 0;
+	while (sonsuz < 2) {
+		cout << "\n\nblack jack oynamak ister misin(evet/1 hayır/2)\n->";
+		cin >> karar;
+		if (karar == 1) {
+			oyuncu = 0;
+			krupiyer = 0;
+			oyun = 1;
+			cekme = 4;
+			cout << "\nkartları hazırlıyoruz lütfen 10sn bekleyiniz";
+			for (i = 0; i < 15; i++) {
+				kart[i] = rastgele_sayi();
+				cout << "  _  " << kart[i];
+				_sleep(1234);
+			}
+			oyuncu = kart[0] + kart[1];
+			krupiyer = kart[2];
+			cekme = 3;
+			while (oyun < 2) {
+				cout << "\nkalmak için-1/çekmek için-2\n";
+				cout << "\noyuncu:\n->" << oyuncu << "\nkrupiyer:\n->" << krupiyer << "\n->";
+				cin >> kararo;
+				if (kararo == 2) {
+					oyuncu = oyuncu + kart[cekme];
+					if (oyuncu > 21) {
+						cout << "\n\noyuncu:\n->" << oyuncu << "\nkrupiyer:\n->" << krupiyer << "\n";
+						kaybetme = kaybetme + 1;
+						cout << "\nkaybettiniz";
+						oyun++;
+					}
+				}
+				else if (kararo == 1) {
+					while (krupiyer < oyuncu) {
+						krupiyer = krupiyer + kart[cekme];
+						cout << "\n\noyuncu:\n->" << oyuncu << "\nkrupiyer:\n->" << krupiyer << "\n";
+						cekme++;
+						_sleep(1000);
+					}
+					if (krupiyer > oyuncu) {
+						if (krupiyer < 22) {
+							kaybetme++;
+							cout << "\nkaybettiniz";
+							oyun++;
+						}
+						if (krupiyer > 21) {
+							cout << "\nkazandınız";
+							kazanc = kazanc + 1;
+							oyun++;
+						}
+					}
+					if (krupiyer ==
+						oyuncu) {
+						cout << "\nberabere";
+						berabere++;
+						oyun++;
+					}
+				}
+				cekme++;
 			}
 		}
-		else if(kararo==1){
-			while(krupiyer<oyuncu){
-			cekme++;
-			krupiyer=krupiyer+kart[cekme];
-			cout<<"\n\noyuncu:\n->"<<oyuncu<<"\nkrupiyer:\n->"<<krupiyer<<"\n";
-			_sleep(1000);
+		else {
+			sonsuz++;
 		}
-		if(krupiyer>oyuncu){
-			if(krupiyer<22){
-				kaybetme++;
-				cout<<"\nkaybettiniz";
-				oyun++;
-			}
-			if(krupiyer>21){
-				cout<<"\nkazandınız";
-				kazanc=kazanc+1;
-				oyun++;
-			}
-		}
-		if(krupiyer==
-		oyuncu){
-			cout<<"\nberabere";
-			berabere++;
-			oyun++;
-		}
-		}
-		cekme++;
 	}
-	}
-	else {
-		sonsuz++;
-	}
-}
-	cout<<"\nkazanma sayınız->"<<kazanc<<"\nkaybetme sayınız->"<<kaybetme<<"\nberabere sayınız->"<<berabere;
+	cout << "\nkazanma sayınız->" << kazanc << "\nkaybetme sayınız->" << kaybetme << "\nberabere sayınız->" << berabere;
 	return 0;
 }
