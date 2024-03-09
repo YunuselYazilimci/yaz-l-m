@@ -44,13 +44,7 @@ int main() {
 		while (sonsuz < 2) {
 			sonsuz = 1;
 			ayar = 1;
-			cout << "ana menüye dönmek için 1 e basınız istmiyorsanız 2 ye basınız\n->";
-			cin >> seçim;
-			if (seçim == 1) {
-				sonsuz++;
-			}
-			else {
-				cout << "kullanıcı adınızı giriniz->";
+				cout << "\nkullanıcı adınızı giriniz->";
 				cin >> kullanici_adi;
 				if (kullanici_adi2 == kullanici_adi) {
 					cout << "şifrenizi giriniz->";
@@ -102,6 +96,7 @@ int main() {
 								break;
 							case 4:
 								ayar++;
+								sonsuz++;
 								break;
 							}
 						}
@@ -113,7 +108,6 @@ int main() {
 				else {
 					cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
 				}
-			}
 		}
 	}
 	return 0;
