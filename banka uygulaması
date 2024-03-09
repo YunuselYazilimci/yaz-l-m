@@ -1,0 +1,121 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include<locale.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+#pragma warning (disable:4996)
+using namespace std;
+
+int para_yatirma() {
+	int x;
+	cout << "ne kadar para yatırmak istersiniz\n->";
+	cin >> x;
+	return x;
+}
+
+int para_cekme() {
+	int çekilen_para;
+	cout << "ne kadar para çekmek istersiniz\n->";
+	cin >> çekilen_para;
+	return çekilen_para;
+}
+
+int main() {
+	setlocale(LC_ALL, "Turkish");
+	int ayar = 1, seçim, bakiye = 500, çekilen_para, yatirilan_para, sonsuz = 1, evren = 1;
+	string parola="vcdfg", kullanici_adi="yunus", parola2="vcdfg", kullanici_adi2="yunus";
+	while (evren < 2) {
+		sonsuz = 1;
+		ayar = 1;
+		cout << "1-yeni hesap \n2-giriş yap\n->";
+		cin >> seçim;
+		if (seçim == 1) {
+			bakiye = 500;
+			cout << "yeni hesap oluşturuluyor\nkullanıcı adınızı giriniz->";
+			cin >> kullanici_adi;
+			kullanici_adi2 = kullanici_adi;
+			cout << "parolanızı griniz->";
+			cin >> parola;
+			parola2 = parola;
+		}
+		while (sonsuz < 2) {
+			sonsuz = 1;
+			ayar = 1;
+			seçim = 1;
+			if (seçim == 1) {
+				cout << "kullanıcı adınızı giriniz->";
+				cin >> kullanici_adi;
+				if (kullanici_adi2 == kullanici_adi) {
+					cout << "şifrenizi giriniz->";
+					cin >> parola;
+					if (parola2 == parola) {
+						cout << "hesabınıza hoş geldiniz";
+						while (ayar < 2) {
+							cout << "\n\n\nhangi işlemi yapmakistersiniz\n1-Para yatır\n2-Para çek\n3-Bakiy görüntüle\n4-Çıkış\n->";
+							cin >> seçim;
+							if (seçim <= 0) {
+								cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+							}
+							if (seçim >= 5) {
+								cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+							}
+							switch (seçim) {
+							case 1:
+								yatirilan_para = para_yatirma();
+								if (yatirilan_para <= 0) {
+									cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+								}
+								else {
+									bakiye = bakiye + yatirilan_para;
+								}
+								cout << "\nkalan bakiyeniz->" << bakiye;
+								break;
+							case 2:
+								çekilen_para = para_cekme();
+								if (çekilen_para > bakiye) {
+									cout << "eğer bu parayı çekerseniz bankaya borcunuz olur bundan emin misiniz?(evet/1-hayır/2)\n->";
+									cin >> seçim;
+									if (seçim == 1) {
+										bakiye = bakiye - çekilen_para;
+									}
+									cout << "\nkalan bakiyeniz->" << bakiye;
+								}
+								else {
+									if (çekilen_para <= 0) {
+										cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+									}
+									else {
+										bakiye = bakiye - çekilen_para;
+									}
+									cout << "\nkalan bakiyeniz->" << bakiye;
+								}
+								break;
+							case 3:
+								cout << "bakiyeniz->" << bakiye;
+								break;
+							case 4:
+								ayar++;
+								break;
+							}
+						}
+					}
+					else {
+						cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+					}
+				}
+				else {
+					cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+				}
+			}
+			else if (seçim == 2) {
+				sonsuz++;
+			}
+			else {
+				cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+			}
+		}
+	}
+	return 0;
+}
