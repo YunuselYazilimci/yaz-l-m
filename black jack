@@ -16,19 +16,21 @@ int rastgele_sayi() {
 
 int main() {
 	setlocale(LC_ALL, "Turkish");
-	int sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[16], kazanc = 0, kaybetme = 0, berabere = 0;
+	int sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[16], kazanc = 0, kaybetme = 0, berabere = 0, para=100, bahis=0;
 	while (sonsuz < 2) {
 		cout << "\n\nblack jack oynamak ister misin(evet/1 hayır/2)\n->";
 		cin >> karar;
 		if (karar == 1) {
+			cout << "sizin şu anda " << para << " jetonunuz var\nne kadarlık bahse girmek istersiniz?\n->";
+			cin >> bahis;
+			para = para - bahis;
 			oyuncu = 0;
 			krupiyer = 0;
 			oyun = 1;
 			cekme = 4;
-			cout << "\nkartları hazırlıyoruz lütfen 10sn bekleyiniz yunus sibili";
+			cout << "\nkartlarınız hazırlıyoruz lütfen 10sn bekleyiniz";
 			for (i = 0; i < 15; i++) {
 				kart[i] = rastgele_sayi();
-				cout << "  _  " << kart[i];
 				_sleep(1234);
 			}
 			oyuncu = kart[0] + kart[1];
@@ -62,6 +64,7 @@ int main() {
 						}
 						if (krupiyer > 21) {
 							cout << "\nkazandınız";
+							para = para + (bahis * 2);
 							kazanc = kazanc + 1;
 							oyun++;
 						}
@@ -69,6 +72,7 @@ int main() {
 					if (krupiyer ==
 						oyuncu) {
 						cout << "\nberabere";
+						para = para + bahis;
 						berabere++;
 						oyun++;
 					}
