@@ -102,11 +102,11 @@ int main() {
 						}
 					}
 					else {
-						cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+						cout << "--------yanlış parola--------\n----lütfen tekrar deneyiniz----";
 					}
 				}
 				else {
-					cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
+					cout << "--------böyle bir kullanıcı adı yoktur--------";
 				}
 		}
 	}
