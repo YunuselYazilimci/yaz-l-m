@@ -1,0 +1,51 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include<locale.h>
+#pragma warning (disable:4996)
+#include<stdlib.h>
+#include<time.h>
+using namespace std;
+
+struct ogrenci {
+	string isim, soyisim, cinsiyet, okulno, tel, tc;
+};
+
+int main() {
+	setlocale(LC_ALL, "Turkish");
+	int evren = 1;
+	string seçim;
+	string bir="1", iki="2";
+	ogrenci kullanici;
+	kullanici.cinsiyet = "atanmamış";
+	kullanici.isim = "atanmamış";
+	kullanici.soyisim = "atanmamış";
+	kullanici.tel = "atanmamış";
+	kullanici.tc = "atanmamış";
+	kullanici.okulno = "atanmamış";
+	while (evren < 2) {
+		cout << "\nöğrenci eklemek için 1\nöğrenci görüntülemek için 2\nçıkmak için 3\n->";
+		cin >> seçim;
+		if (seçim==bir) {
+			cout << "\nöğrencinin ismini gir(eğer iki ismin varsa tercih ettiğini gir)\n->";
+			cin >> kullanici.isim;
+			cout << "\nöğrencinin soyismini gir\n->";
+			cin >> kullanici.soyisim;
+			cout << "\nöğrencinin cinsiyetini gir\n->";
+			cin >> kullanici.cinsiyet;	
+			cout << "\nöğrencinin okul numarasını gir\n->";
+			cin >> kullanici.okulno;
+			cout << "\nöğrencinin telefon numarasını gir\n->";
+			cin >> kullanici.tel;
+			cout << "\nöğrencinin kimlik numarasını gir\n->";
+			cin >> kullanici.tc;
+		}
+		else if (seçim==iki){
+			cout << "\nöğrencinin ismi:\n->" << kullanici.isim << "\nöğrencinin soyismi:\n->" << kullanici.soyisim << "\nöğrencinin okul numarası:\n->" << kullanici.okulno << "\nöğrencinin kimlik numarası:\n->" << kullanici.tc << "\nöğrencinin telefon numarası:\n->" << kullanici.tel << "\nöğrencinin cinsiyeti:\n->" << kullanici.cinsiyet;
+		}
+		else {
+			evren++;
+		}
+	}
+	return 0;
+}
