@@ -25,7 +25,7 @@ int para_cekme() {
 int main() {
 	setlocale(LC_ALL, "Turkish");
 	int ayar = 1, seçim, bakiye = 500, çekilen_para, yatirilan_para, sonsuz = 1, evren = 1;
-	string parola="vcdfg", kullanici_adi="yunus", parola2="vcdfg", kullanici_adi2="yunus";
+	string parola = "vcdfg", kullanici_adi = "yunus", parola2 = "vcdfg", kullanici_adi2 = "yunus";
 	while (evren < 2) {
 		sonsuz = 1;
 		ayar = 1;
@@ -39,12 +39,17 @@ int main() {
 			cout << "parolanızı griniz->";
 			cin >> parola;
 			parola2 = parola;
+			cout << "hesabınız oluşturuldu";
 		}
 		while (sonsuz < 2) {
 			sonsuz = 1;
 			ayar = 1;
-			seçim = 1;
+			cout << "ana menüye dönmek için 1 e basınız istmiyorsanız 2 ye basınız\n->";
+			cin >> seçim;
 			if (seçim == 1) {
+				sonsuz++;
+			}
+			else {
 				cout << "kullanıcı adınızı giriniz->";
 				cin >> kullanici_adi;
 				if (kullanici_adi2 == kullanici_adi) {
@@ -53,7 +58,7 @@ int main() {
 					if (parola2 == parola) {
 						cout << "hesabınıza hoş geldiniz";
 						while (ayar < 2) {
-							cout << "\n\n\nhangi işlemi yapmakistersiniz\n1-Para yatır\n2-Para çek\n3-Bakiy görüntüle\n4-Çıkış\n->";
+							cout << "\n\n\nhangi işlemi yapmakistersiniz\n1-Para yatır\n2-Para çek\n3-Bakiye görüntüle\n4-Çıkış\n->";
 							cin >> seçim;
 							if (seçim <= 0) {
 								cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
@@ -108,12 +113,6 @@ int main() {
 				else {
 					cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
 				}
-			}
-			else if (seçim == 2) {
-				sonsuz++;
-			}
-			else {
-				cout << "--------yanlış tuşlama!--------\n----lütfen tekrar deneyiniz----";
 			}
 		}
 	}
