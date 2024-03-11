@@ -64,7 +64,7 @@ int çarpma() {
 	}
 	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
 	toplam = doğru - yanlış;
-		return toplam;
+	return toplam;
 }
 
 int çıkarma() {
@@ -90,7 +90,7 @@ int çıkarma() {
 	}
 	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
 	toplam = doğru - yanlış;
-		return toplam;
+	return toplam;
 }
 
 int bölme() {
@@ -186,7 +186,7 @@ float bölme1() {
 }
 
 int üslü1() {
-	int s1, time, sonuç=1;
+	int s1, time, sonuç = 1;
 	system("cls");
 	cout << "önce sayının tabanını girin\n->";
 	cin >> s1;
@@ -225,7 +225,7 @@ struct bilgi {
 int main() {
 	setlocale(LC_ALL, "Turkish");
 	cout << "~~Emniyet Dünyasına Hoş Geldiniz~~";
-	int sıra = 1, evren = 0, mainture = 0, isimture, parolature, hesapno, hesapnoi, hesapnop, hesapoluşturmai = 1, hesapoluşturmap = 1, hesapoluşturmapara = 1, doğrulama = 0, dünya = 0, para, hesapmakinesi = 0, hesapgame = 0, sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[16], kazanc = 0, kaybetme = 0, berabere = 0, bahis = 0;
+	int sıra = 1, evren = 0, mainture = 0, isimture, parolature, hesapno, hesapnoi, hesapnop, hesapoluşturmai = 1, hesapoluşturmap = 1, hesapoluşturmapara = 1, doğrulama = 0, dünya = 0, para, hesapmakinesi = 0, hesapgame = 0, sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[13], kazanc = 0, kaybetme = 0, berabere = 0, bahis = 0;
 	string kullanıcı[20], seçim, isim, parola;
 	_sleep(1000);
 	bilgi kişi[20];
@@ -362,7 +362,7 @@ int main() {
 										oyun = 1;
 										cekme = 4;
 										cout << "\nkartlarınız hazırlıyoruz lütfen 10sn bekleyiniz";
-										for (i = 0; i < 15; i++) {
+										for (i = 0; i < 13; i++) {
 											kart[i] = rastgele_sayi();
 											_sleep(1234);
 										}
@@ -496,6 +496,7 @@ int main() {
 								else if (seçim != "1") {
 									system("cls");
 									cout << "ELİN ÇARPTI GALİBA";
+									hesapmakinesi++;
 									_sleep(1000);
 									system("cls");
 								}
@@ -526,8 +527,8 @@ int main() {
 								else if (seçim == "4") {
 									system("cls");
 									kişi[hesapno].para = kişi[hesapno].para + bölme() * 50;
-									}
-								else if(seçim=="5"){
+								}
+								else if (seçim == "5") {
 									hesapgame++;
 								}
 								else {
