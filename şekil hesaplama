@@ -1,0 +1,190 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include<locale.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+#pragma warning (disable:4996)
+using namespace std;
+
+int kare() {
+	string karar1;
+	int döngü = 1, uzunluk, sonuç;
+	while (döngü < 2) {
+		system("cls");
+		cout << "karenin alanını mı yoksa çevresini mi hesaplamamızı istersiniz\n1-alan\n2-çevre\n->";
+		cin >> karar1;
+		if (karar1 == "1") {
+			system("cls");
+			cout << "Lütfen karenin bir kenarının uzunluğunu giriniz\n->";
+			cin >> uzunluk;
+			sonuç = uzunluk * uzunluk;
+			cout << "karenin alanı->" << sonuç;
+			_sleep(2000);
+			döngü++;
+		}
+		else if (karar1 == "2") {
+			system("cls");
+			cout << "Lütfen karenin bir kenarının uzunluğunu giriniz\n->";
+			cin >> uzunluk;
+			sonuç = uzunluk * 4;
+			cout << "karenin çevresi->" << sonuç;
+			_sleep(2000);
+			döngü++;
+		}
+		else {
+			system("cls");
+			cout << "yanlış tuşlama yaptınız";
+			_sleep(2000);
+			system("cls");
+		}
+	}
+	return 0;
+}
+
+int dikdörtgen() {
+	string karar1;
+	int döngü = 1, uzunk, sonuç, kısak;
+	while (döngü < 2) {
+		system("cls");
+		cout << "dikdörtgenin alanını mı yoksa çevresini mi hesaplamamızı istersiniz\n1-alan\n2-çevre\n->";
+		cin >> karar1;
+		if (karar1 == "1") {
+			cout << "dikdörtgenin bir uzun kenarını birde kısa kenarını giriniz\n->";
+			cin >> kısak;
+			cout << "->";
+			cin >> uzunk;
+			sonuç = uzunk * kısak;
+			cout << "dikdörtgenin alanı->" << sonuç;
+			_sleep(2000);
+			döngü++;
+		}
+		else if (karar1 == "2") {
+			cout << "dikdörtgenin bir uzun kenarını birde kısa kenarını giriniz\n->";
+			cin >> kısak;
+			cout << "->";
+			cin >> uzunk;
+			sonuç = (uzunk + kısak)*2;
+			cout << "dikdörtgenin çevresi->" << sonuç;
+			_sleep(2000);
+			döngü++;
+		}
+		else {
+			system("cls");
+			cout << "yanlış tuşlama yaptınız";
+			_sleep(2000);
+			system("cls");
+		}
+		}
+		return 0;
+	}
+
+	int ucgen() {
+		string karar1;
+		int döngü = 1, taban, sonuç, h, k1, k2, k3;
+		while (döngü < 2) {
+			system("cls");
+			cout << "üçgenin alanını mı yoksa çevresini mi hesaplamamızı istersiniz\n1-alan\n2-çevre\n->";
+			cin >> karar1;
+			if (karar1 == "1") {
+				cout << "üçgenin tabn uzunluğunu giriniz\n->";
+				cin >> taban;
+				cout << "üçgenin yüksekliğini giriniz\n->";
+				cin >> h;
+				sonuç = h * taban/2;
+				cout << "üçgenin alanı->" << sonuç;
+				_sleep(2000);
+				döngü++;
+			}
+			else if (karar1 == "2") {
+				cout << "üçgenin üç kenarını giriniz\n->";
+				cin >> k1;
+				cout << "->";
+				cin >> k2;
+				cout << "->";
+				cin >> k3;
+				sonuç = k1 + k2 + k3;
+				cout << "üçgenin çevresi->" << sonuç;
+				_sleep(2000);
+				döngü++;
+			}
+			else {
+				system("cls");
+				cout << "yanlış tuşlama yaptınız";
+				_sleep(2000);
+				system("cls");
+			}
+		}
+		return 0;
+	}
+
+	int çember() {
+		string karar1;
+		int döngü = 1, yarıçap;
+		float sonuç;
+		while (döngü < 2) {
+			system("cls");
+			cout << "çemberin alanını mı yoksa çevresini mi hesaplamamızı istersiniz\n1-alan\n2-çevre\n->";
+			cin >> karar1;
+			if (karar1 == "1") {
+				system("cls");
+				cout << "Lütfen çemberin yarı çapını giriniz\n->";
+				cin >> yarıçap;
+				sonuç = yarıçap * yarıçap * 3.14;
+				cout << "çemberin alanı->" << sonuç;
+				_sleep(2000);
+				döngü++;
+			}
+			else if (karar1 == "2") {
+				system("cls");
+				cout << "Lütfen çemberin yarı çapını giriniz\n->";
+				cin >> yarıçap;
+				sonuç = yarıçap * 2 * 3.14;
+				cout << "çemberin çevresi->" << sonuç;
+				_sleep(2000);
+				döngü++;
+			}
+			else {
+				system("cls");
+				cout << "yanlış tuşlama yaptınız";
+				_sleep(2000);
+				system("cls");
+			}
+		}
+		return 0;
+	}
+
+	int main() {
+		setlocale(LC_ALL, "Turkish");
+		string karar;
+		int dongu = 1;
+		cout << "Alan ve cevre hesaplayana hoş geldiniz";
+		while (dongu < 2) {
+			system("cls");
+			cout << "lütfen hesaplamak istediğiniz şekli seçiniz\n1-Kare\n2-Dikdörtgen\n3-Çember\n4-Üçgen\n5-Çıkış\n->";
+			cin >> karar;
+			if (karar == "1") {
+				kare();
+			}
+			else if (karar == "2") {
+				dikdörtgen();
+			}
+			else if (karar == "3") {
+				çember();
+			}
+			else if (karar == "4") {
+				ucgen();
+			}
+			else if (karar == "5") {
+				dongu++;
+			}
+			else {
+				system("cls");
+				cout << "yanlış tuşlama yaptınız";
+				_sleep(2000);
+				system("cls");
+			}
+		}
+		return 0;
+	}
