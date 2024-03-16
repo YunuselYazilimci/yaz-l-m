@@ -1,0 +1,30 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include<locale.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include <math.h>
+#pragma warning (disable:4996)
+using namespace std;
+
+int main() {
+	int dikey1, dikey2, yatay1, yatay2, dikey3, yatay3, hipotenüs;
+	cout << "ilk noktanın konumunu giriniz\nx->";
+	cin >> yatay1;
+	cout << "ilk noktanın konumunu giriniz\ny->";
+	cin >> dikey1;
+	cout << "ikinci noktanın konumunu giriniz\nx->";
+	cin >> yatay2;
+	cout << "ikinci noktanın konumunu giriniz\ny->";
+	cin >> dikey2;
+	yatay3 = abs(yatay1 - yatay2);
+	dikey3 = abs(dikey1 - dikey2);
+	yatay3 = pow(yatay3, 2);
+	dikey3 = pow(dikey3, 2);
+	hipotenüs = sqrt(yatay3 + dikey3);
+	cout << "\n->" << hipotenüs;
+	return 0;
+}
