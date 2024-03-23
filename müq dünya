@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
-#pragma warning (disable:4996)
+#include <cstdlib>
 using namespace std;
 
 int rastgele_sayi() {
@@ -287,7 +287,7 @@ int main() {
 					dünya = 0;
 					while (dünya < 1) {
 						system("cls");
-						cout << "Para yatırmak için-1\nPara çekmek için-2\nBakiye görüntülemek için-3\nBlack Jack oynamak için-4\nHesap makinesi kullanmak için-5\nHesaplama oyunu oynamak için-6\nÇıkış yapmak için-7\n->";
+						cout << "Para yatırmak için-1\nPara çekmek için-2\nBakiye görüntülemek için-3\nBlack Jack oynamak için-4\nHesap makinesi kullanmak için-5\nHesaplama oyunu oynamak için-6\nAt yarışı oyunu oynamak için-7\nÇıkış yapmak için-8\n->";
 						cin >> seçim;
 						if (seçim == "1") {
 							system("cls");
@@ -541,6 +541,35 @@ int main() {
 							}
 						}
 						else if (seçim == "7") {
+							if (kişi[hesapno].para <= 0) {
+								system("cls");
+								cout << "BU OYUNU OYNAMAN İÇİN PARAYA İHTİYACIN VAR...";
+								_sleep(3000);
+								system("cls");
+							}
+							else {
+								system("cls");
+								cout << "AT YARIŞI OYUNUNA HOŞ GELDİNİZ";
+								_sleep(2000);
+								system("cls");
+								karar = 1;
+								while (karar == 1) {
+									system("cls");
+									cout << "sizin şu anda " << kişi[hesapno].para << " TL'niz var\nne kadarlık bahse girmek istersiniz?\n->";
+									cin >> bahis;
+									if (bahis > kişi[hesapno].para) {
+										cout << "bahsiniz paranızdan büyük olamaz";
+									}
+									else if (bahis < 0) {
+										cout << "negtif değerde bahis giremezsiniz";
+									}
+									else {
+										kişi[hesapno].para = kişi[hesapno].para - bahis;
+									}
+								}
+							}
+						}
+						else if (seçim == "8") {
 							dünya++;
 						}
 						else {
@@ -563,6 +592,7 @@ int main() {
 			cout << "yeni hesap oluşturuluyor";
 			_sleep(1000);
 			system("cls");
+			doğrulama = 0;
 			while (doğrulama < 1) {
 				cout << "yeni hasabın adını giriniz\n->";
 				cin >> isim;
