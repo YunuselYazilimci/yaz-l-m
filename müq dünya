@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <cstdlib>
+#pragma warning (disable:4996)
 using namespace std;
 
 int rastgele_sayi() {
@@ -64,7 +64,7 @@ int çarpma() {
 	}
 	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
 	toplam = doğru - yanlış;
-	return toplam;
+		return toplam;
 }
 
 int çıkarma() {
@@ -90,7 +90,7 @@ int çıkarma() {
 	}
 	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
 	toplam = doğru - yanlış;
-	return toplam;
+		return toplam;
 }
 
 int bölme() {
@@ -186,7 +186,7 @@ float bölme1() {
 }
 
 int üslü1() {
-	int s1, time, sonuç = 1;
+	int s1, time, sonuç=1;
 	system("cls");
 	cout << "önce sayının tabanını girin\n->";
 	cin >> s1;
@@ -225,7 +225,7 @@ struct bilgi {
 int main() {
 	setlocale(LC_ALL, "Turkish");
 	cout << "~~Emniyet Dünyasına Hoş Geldiniz~~";
-	int sıra = 1, evren = 0, mainture = 0, isimture, parolature, hesapno, hesapnoi, hesapnop, hesapoluşturmai = 1, hesapoluşturmap = 1, hesapoluşturmapara = 1, doğrulama = 0, dünya = 0, para, hesapmakinesi = 0, hesapgame = 0, sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[13], kazanc = 0, kaybetme = 0, berabere = 0, bahis = 0;
+	int sıra = 1, evren = 0, mainture = 0, isimture, parolature, hesapno, hesapnoi, hesapnop, hesapoluşturmai = 1, hesapoluşturmap = 1, hesapoluşturmapara = 1, doğrulama = 0, dünya = 0, para, hesapmakinesi = 0, hesapgame = 0, sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[12], kazanc = 0, kaybetme = 0, berabere = 0, bahis = 0;
 	string kullanıcı[20], seçim, isim, parola;
 	_sleep(1000);
 	bilgi kişi[20];
@@ -287,7 +287,7 @@ int main() {
 					dünya = 0;
 					while (dünya < 1) {
 						system("cls");
-						cout << "Para yatırmak için-1\nPara çekmek için-2\nBakiye görüntülemek için-3\nBlack Jack oynamak için-4\nHesap makinesi kullanmak için-5\nHesaplama oyunu oynamak için-6\nAt yarışı oyunu oynamak için-7\nÇıkış yapmak için-8\n->";
+						cout << "Para yatırmak için-1\nPara çekmek için-2\nBakiye görüntülemek için-3\nBlack Jack oynamak için-4\nHesap makinesi kullanmak için-5\nHesaplama oyunu oynamak için-6\nÇıkış yapmak için-7\n->";
 						cin >> seçim;
 						if (seçim == "1") {
 							system("cls");
@@ -361,8 +361,8 @@ int main() {
 										krupiyer = 0;
 										oyun = 1;
 										cekme = 4;
-										cout << "\nkartlarınız hazırlıyoruz lütfen 10sn bekleyiniz";
-										for (i = 0; i < 13; i++) {
+										cout << "\nkartlarınız hazırlıyoruz lütfen 15sn bekleyiniz";
+										for (i = 0; i < 11; i++) {
 											kart[i] = rastgele_sayi();
 											_sleep(1234);
 										}
@@ -496,7 +496,6 @@ int main() {
 								else if (seçim != "1") {
 									system("cls");
 									cout << "ELİN ÇARPTI GALİBA";
-									hesapmakinesi++;
 									_sleep(1000);
 									system("cls");
 								}
@@ -527,8 +526,8 @@ int main() {
 								else if (seçim == "4") {
 									system("cls");
 									kişi[hesapno].para = kişi[hesapno].para + bölme() * 50;
-								}
-								else if (seçim == "5") {
+									}
+								else if(seçim=="5"){
 									hesapgame++;
 								}
 								else {
@@ -541,35 +540,6 @@ int main() {
 							}
 						}
 						else if (seçim == "7") {
-							if (kişi[hesapno].para <= 0) {
-								system("cls");
-								cout << "BU OYUNU OYNAMAN İÇİN PARAYA İHTİYACIN VAR...";
-								_sleep(3000);
-								system("cls");
-							}
-							else {
-								system("cls");
-								cout << "AT YARIŞI OYUNUNA HOŞ GELDİNİZ";
-								_sleep(2000);
-								system("cls");
-								karar = 1;
-								while (karar == 1) {
-									system("cls");
-									cout << "sizin şu anda " << kişi[hesapno].para << " TL'niz var\nne kadarlık bahse girmek istersiniz?\n->";
-									cin >> bahis;
-									if (bahis > kişi[hesapno].para) {
-										cout << "bahsiniz paranızdan büyük olamaz";
-									}
-									else if (bahis < 0) {
-										cout << "negtif değerde bahis giremezsiniz";
-									}
-									else {
-										kişi[hesapno].para = kişi[hesapno].para - bahis;
-									}
-								}
-							}
-						}
-						else if (seçim == "8") {
 							dünya++;
 						}
 						else {
@@ -592,7 +562,6 @@ int main() {
 			cout << "yeni hesap oluşturuluyor";
 			_sleep(1000);
 			system("cls");
-			doğrulama = 0;
 			while (doğrulama < 1) {
 				cout << "yeni hasabın adını giriniz\n->";
 				cin >> isim;
