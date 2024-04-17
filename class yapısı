@@ -1,0 +1,36 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include<locale.h>
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <fstream>
+#pragma warning (disable:4996)
+using namespace std;
+
+class bulma {
+private:
+	int dizi[5] = { 1,3,5,7,9 };
+public:
+
+	void st(int x) {
+		for (int y = 0; y < 5; y++) {
+			this->dizi[y];
+			if (x == dizi[y]) {
+				cout<<"buldun";
+			}
+		}
+		return;
+	}
+};
+
+int main() {
+	setlocale(LC_ALL, "Turkish");
+	int a;
+	cout << "tek rakam giriniz\n->";
+	cin >> a;
+	bulma sayi;
+	sayi.st(a);
+	return 0;
+}
