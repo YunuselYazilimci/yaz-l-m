@@ -228,7 +228,7 @@ int main() {
 	cout << "~~Emniyet Dünyasına Hoş Geldiniz~~";
 	int sıra = 1, evren = 0, mainture = 0, isimture, parolature, hesapno, hesapnoi, hesapnop, hesapoluşturmai = 1, hesapoluşturmap = 1, hesapoluşturmapara = 1, doğrulama = 0, dünya = 0, para, hesapmakinesi = 0, hesapgame = 0, sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[12], kazanc = 0, kaybetme = 0, berabere = 0, bahis = 0;
 	string kullanıcı[20], seçim, isim, parola;
-	_sleep(1000);
+	_sleep(2000);
 	bilgi kişi[20];
 	kişi[1].isim = "yunus";
 	kişi[1].parola = "vcdfg";
