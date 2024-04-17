@@ -1,10 +1,11 @@
 #include <iostream>
 #include <ctime>
 #include <stdio.h>
-#include<locale.h>
+#include <locale.h>
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 #pragma warning (disable:4996)
 using namespace std;
 
@@ -27,7 +28,7 @@ int toplama() {
 		cin >> sonuc;
 		if (sonuc == s1 + s2) {
 			cout << "DOĞRU!TEBRİKLER!";
-			sleep(2500);
+			_sleep(2500);
 			doğru++;
 			break;
 		}
@@ -53,7 +54,7 @@ int çarpma() {
 		cin >> sonuc;
 		if (sonuc == s1 * s2) {
 			cout << "DOĞRU!TEBRİKLER!";
-			sleep(2500);
+			_sleep(2500);
 			doğru++;
 			break;
 		}
@@ -64,7 +65,7 @@ int çarpma() {
 	}
 	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
 	toplam = doğru - yanlış;
-		return toplam;
+	return toplam;
 }
 
 int çıkarma() {
@@ -79,7 +80,7 @@ int çıkarma() {
 		cin >> sonuc;
 		if (sonuc == s1 - s2) {
 			cout << "DOĞRU!TEBRİKLER!";
-			sleep(2500);
+			_sleep(2500);
 			doğru++;
 			break;
 		}
@@ -90,7 +91,7 @@ int çıkarma() {
 	}
 	cout << "şu kadar yanlışınız vardır\n->" << yanlış;
 	toplam = doğru - yanlış;
-		return toplam;
+	return toplam;
 }
 
 int bölme() {
@@ -107,7 +108,7 @@ int bölme() {
 			cin >> sonuc;
 			if (sonuc == s2 / s1) {
 				cout << "DOĞRU!TEBRİKLER!";
-				sleep(2500);
+				_sleep(2500);
 				doğru++;
 				break;
 			}
@@ -186,7 +187,7 @@ float bölme1() {
 }
 
 int üslü1() {
-	int s1, time, sonuç=1;
+	int s1, time, sonuç = 1;
 	system("cls");
 	cout << "önce sayının tabanını girin\n->";
 	cin >> s1;
@@ -227,7 +228,7 @@ int main() {
 	cout << "~~Emniyet Dünyasına Hoş Geldiniz~~";
 	int sıra = 1, evren = 0, mainture = 0, isimture, parolature, hesapno, hesapnoi, hesapnop, hesapoluşturmai = 1, hesapoluşturmap = 1, hesapoluşturmapara = 1, doğrulama = 0, dünya = 0, para, hesapmakinesi = 0, hesapgame = 0, sonsuz = 1, oyuncu, krupiyer, oyun = 1, karar, kararo, cekme, i, kart[12], kazanc = 0, kaybetme = 0, berabere = 0, bahis = 0;
 	string kullanıcı[20], seçim, isim, parola;
-	sleep(1000);
+	_sleep(1000);
 	bilgi kişi[20];
 	kişi[1].isim = "yunus";
 	kişi[1].parola = "vcdfg";
@@ -268,7 +269,7 @@ int main() {
 				if (mainture == 2) {
 					system("cls");
 					cout << "giriş yapılıyor";
-					sleep(2000);
+					_sleep(2000);
 					system("cls");
 				}
 				if (isimture != 1) {
@@ -278,12 +279,12 @@ int main() {
 					cout << "\nparolanızı yanlış girdiniz lütfen tekrar deneyiniz";
 				}
 				if (isimture + parolature != 2) {
-					sleep(2000);
+					_sleep(2000);
 				}
 				else {
 					system("cls");
 					cout << "hesabınıza hoş geldiniz menu hazırlanıyor az sonra gelecek";
-					sleep(2500);
+					_sleep(2500);
 					dünya = 0;
 					while (dünya < 1) {
 						system("cls");
@@ -296,14 +297,14 @@ int main() {
 							if (para <= 0) {
 								system("cls");
 								cout << "girdiğiniz sayı 0 ya da 0 dan küçük olamaz";
-								sleep(3000);
+								_sleep(3000);
 								system("cls");
 							}
 							else {
 								kişi[hesapno].para = kişi[hesapno].para + para;
 								system("cls");
 								cout << "işleminiz gerçekleştiriliyor...";
-								sleep(4000);
+								_sleep(4000);
 								system("cls");
 							}
 						}
@@ -322,7 +323,7 @@ int main() {
 								if (para <= 0) {
 									system("cls");
 									cout << "ÇEKMEK İSTEDİĞİNİZ PARA 0 YA DA 0 DAN KÜÇÜK OLAMAZ";
-									sleep(3000);
+									_sleep(3000);
 									system("cls");
 								}
 								else {
@@ -333,14 +334,14 @@ int main() {
 						else if (seçim == "3") {
 							system("cls");
 							cout << "hesabınızda şu anda " << kişi[hesapno].para << "TL var";
-							sleep(4000);
+						_sleep(4000);
 							system("cls");
 						}
 						else if (seçim == "4") {
 							if (kişi[hesapno].para <= 0) {
 								system("cls");
 								cout << "BU OYUNU OYNAMAN İÇİN PARAYA İHTİYACIN VAR...";
-								sleep(3000);
+								_sleep(3000);
 								system("cls");
 							}
 							else {
@@ -365,7 +366,7 @@ int main() {
 											cout << "\nkartlarınız hazırlıyoruz lütfen 15sn bekleyiniz";
 											for (i = 0; i < 11; i++) {
 												kart[i] = rastgele_sayi();
-												sleep(1234);
+												_sleep(1234);
 											}
 											oyuncu = kart[0] + kart[1];
 											krupiyer = kart[2];
@@ -382,7 +383,7 @@ int main() {
 														cout << "\n\noyuncu:\n->" << oyuncu << "\nkrupiyer:\n->" << krupiyer << "\n";
 														kaybetme = kaybetme + 1;
 														cout << "\nkaybettiniz";
-														sleep(2000);
+														_sleep(2000);
 														oyun++;
 													}
 												}
@@ -393,20 +394,20 @@ int main() {
 														system("cls");
 														cout << "\n\noyuncu:\n->" << oyuncu << "\nkrupiyer:\n->" << krupiyer << "\n";
 														cekme++;
-														sleep(1000);
+														_sleep(1000);
 													}
 													if (krupiyer > oyuncu) {
 														if (krupiyer < 22) {
 															kaybetme++;
 															cout << "\nkaybettiniz";
-															sleep(2000);
+															_sleep(2000);
 															oyun++;
 														}
 														if (krupiyer > 21) {
 															cout << "\nkazandınız";
 															kişi[hesapno].para = kişi[hesapno].para + (bahis * 2);
 															kazanc = kazanc + 1;
-															sleep(2000);
+															_sleep(2000);
 															oyun++;
 														}
 													}
@@ -415,7 +416,7 @@ int main() {
 														cout << "\nberabere";
 														kişi[hesapno].para = kişi[hesapno].para + bahis;
 														berabere++;
-														sleep(2000);
+														_sleep(2000);
 														oyun++;
 													}
 												}
@@ -424,7 +425,7 @@ int main() {
 										}
 										if (kişi[hesapno].para <= 0) {
 											cout << "iflas ettiniz";
-											sleep(2000);
+											_sleep(2000);
 											sonsuz++;
 										}
 										system("cls");
@@ -435,7 +436,7 @@ int main() {
 										}
 										else if (karar != 1) {
 											cout << "ELİN ÇARPTI GALİBA";
-											sleep(3000);
+											_sleep(3000);
 										}
 										system("cls");
 									}
@@ -454,38 +455,38 @@ int main() {
 								cin >> seçim;
 								if (seçim == "1") {
 									toplama1();
-									sleep(3000);
+									_sleep(3000);
 									system("cls");
 								}
 								else if (seçim == "2") {
 									çıkarma1();
-									sleep(3000);
+									_sleep(3000);
 									system("cls");
 								}
 								else if (seçim == "3") {
 									çarpma1();
-									sleep(3000);
+									_sleep(3000);
 									system("cls");
 								}
 								else if (seçim == "4") {
 									bölme1();
-									sleep(3000);
+									_sleep(3000);
 									system("cls");
 								}
 								else if (seçim == "5") {
 									üslü1();
-									sleep(3000);
+									_sleep(3000);
 									system("cls");
 								}
 								else if (seçim == "6") {
 									faktöriyel1();
-									sleep(3000);
+									_sleep(3000);
 									system("cls");
 								}
 								else {
 									system("cls");
 									cout << "YANLIŞ TUŞLAMA YAPTINIZ";
-									sleep(1000);
+									_sleep(1000);
 									system("cls");
 								}
 								system("cls");
@@ -497,7 +498,7 @@ int main() {
 								else if (seçim != "1") {
 									system("cls");
 									cout << "ELİN ÇARPTI GALİBA";
-									sleep(1000);
+									_sleep(1000);
 									system("cls");
 								}
 							}
@@ -505,7 +506,7 @@ int main() {
 						else if (seçim == "6") {
 							system("cls");
 							cout << "hesaplama oyunuma hoş geldiniz";
-							sleep(1000);
+							_sleep(1000);
 							system("cls");
 							hesapgame = 0;
 							while (hesapgame < 1) {
@@ -527,15 +528,15 @@ int main() {
 								else if (seçim == "4") {
 									system("cls");
 									kişi[hesapno].para = kişi[hesapno].para + bölme() * 50;
-									}
-								else if(seçim=="5"){
+								}
+								else if (seçim == "5") {
 									hesapgame++;
 								}
 								else {
 									system("cls");
 									cout << "GALİBA ELİN KAYDI...";
 									hesapgame++;
-									sleep(2000);
+									_sleep(2000);
 									system("cls");
 								}
 							}
@@ -546,7 +547,7 @@ int main() {
 						else {
 							system("cls");
 							cout << "YANLIŞ TUŞLAMA YAPTINIZ LÜTFEN TEKRAR DENEYİNİZ";
-							sleep(1000);
+							_sleep(1000);
 							system("cls");
 						}
 					}
@@ -555,13 +556,13 @@ int main() {
 			else {
 				cout << "isminizi yanlış girdiniz lütfen tekrar deneyiniz";
 				cout << "\nparolanızı yanlış girdiniz lütfen tekrar deneyiniz";
-				sleep(3000);
+				_sleep(3000);
 			}
 		}
 		else if (seçim == "2") {
 			system("cls");
 			cout << "yeni hesap oluşturuluyor";
-			sleep(1000);
+			_sleep(1000);
 			system("cls");
 			while (doğrulama < 1) {
 				cout << "yeni hasabın adını giriniz\n->";
@@ -608,7 +609,7 @@ int main() {
 					cout << "yeni hesabınız oluşturuldu\nayrıca bizi tercih ettiğiniz için size ayrıca 500 TL kaydolma bonusu verdik ";
 					hesapoluşturmapara++;
 					kişi[hesapoluşturmapara].para = 500;
-					sleep(2000);
+					_sleep(2000);
 				}
 			}
 		}
@@ -618,7 +619,7 @@ int main() {
 		else {
 			system("cls");
 			cout << "HATALI TUŞLAMA YAPTINIZ\nlütfen tekrar deneyiniz";
-			sleep(2000);
+			_sleep(2000);
 		}
 	}
 	return 0;
