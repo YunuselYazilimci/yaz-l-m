@@ -234,6 +234,11 @@ int main() {
 	kişi[0].isim = "yunus";
 	kişi[0].parola = "vcdfg";
 	kişi[0].para = 500;
+	ofstream dosya("muqdunya.txt");
+	dosya.close();
+	ifstream dosya("muqdunya.txt");
+	if (dosya.is_open()) {
+	}
 	while (evren < 1) {
 		system("cls");
 		cout << "Giriş yapmak için-1\nYeni Hesap Oluşturmak için-2\nÖzel giriş için-3\nÇıkış Yapmak için-4\n->";
@@ -658,7 +663,7 @@ int main() {
 					system("cls");
 					cout << "\nMERHABALAR EFENDİM\n";
 					for (int pov = 0; pov < 20; pov++) {
-						cout << pov<<"-\nKullanıcı adı->" << kişi[pov].isim << "\n Kullanıcının şifresi->" << kişi[pov].parola << "\n Kullanıcın parası->" << kişi[pov].parola<<"\n";
+						cout << pov << "-\nKullanıcı adı->" << kişi[pov].isim << "\n Kullanıcının şifresi->" << kişi[pov].parola << "\n Kullanıcın parası->" << kişi[pov].para << "\n";
 					}
 					cout << "\n\nçıkış için tuşlama yapınız->";
 					cin >> saçmalık;
