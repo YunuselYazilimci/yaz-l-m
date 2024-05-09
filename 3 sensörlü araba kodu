@@ -9,7 +9,8 @@
 #define ENB 11
 #define IN3 9
 #define IN4 10
-int Speed = 120; // speed of this robot
+int Speed = 140; // speed of this robot
+int Speedd =115;
 int sag=0;
 int sol=0;
 void setup() {
@@ -66,8 +67,8 @@ void carforward() {
 void carturnleft() {
   sag =1;
   sol = 0;
-  analogWrite(ENA, Speed);
-  analogWrite(ENB, Speed);
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
   digitalWrite(IN3, HIGH);
@@ -76,8 +77,8 @@ void carturnleft() {
 void carturnright() {
   sol = 1;
   sag = 0;
-  analogWrite(ENA, Speed);
-  analogWrite(ENB, Speed);
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
@@ -90,8 +91,8 @@ void carStop() {
   digitalWrite(IN4, LOW);
 }
 void carfind(){
-  analogWrite(ENA, Speed);
-  analogWrite(ENB, Speed);
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
    digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
    digitalWrite(IN3, LOW);
@@ -100,8 +101,8 @@ void carfind(){
 void carturnleft1() {
   sag = 1;
   sol =0 ;
-  analogWrite(ENA, Speed);
-  analogWrite(ENB, Speed);
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, HIGH);
@@ -110,8 +111,8 @@ void carturnleft1() {
 void carturnright1() {
   sol=1;
   sag=0;
-  analogWrite(ENA, Speed);
-  analogWrite(ENB, Speed);
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
@@ -119,16 +120,16 @@ void carturnright1() {
 }
 
 void carturnleft2() {
-  analogWrite(ENA, Speed);
-  analogWrite(ENB, Speed);
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
 }
 void carturnright2() {
-  analogWrite(ENA, Speed);
-  analogWrite(ENB, Speed);
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
