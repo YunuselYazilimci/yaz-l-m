@@ -1,0 +1,164 @@
+#include<Servo.h>
+
+#define left 4
+#define center 5
+#define right 6
+//motor one
+#define ENA 12
+#define IN1 11
+#define IN2 10
+//motor two
+#define ENB 7
+#define IN3 9
+#define IN4 8
+
+Servo sagkol;
+Servo solkol;
+
+int on=0;
+int x=0;
+int derece = 55;
+int Speed = 140; // speed of this robot
+int Speedd =115;
+int sag=0;
+int sol=0;
+void setup() {
+  Serial.begin(9600);
+  pinMode(left, INPUT);
+  pinMode(center, INPUT);
+  pinMode(right, INPUT);
+
+sagkol.attach(3);
+solkol.attach(2);
+
+  pinMode(ENA, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+  pinMode(ENB, OUTPUT);
+}
+void loop() {
+  bool leftV = digitalRead(left);
+  bool centerV = digitalRead(center);
+  bool rightV = digitalRead(right);
+  Serial.println(rightV);
+  if (leftV == 0 && centerV == 1 && rightV == 0) {
+    carforward();
+    Serial.println("forward");
+  }else if(on==1){
+ else if (leftV == 0 && centerV == 0 && rightV == 0) {
+    if (sag==1){
+ carturnleft2();
+    } else if(sol==1){ 
+      carturnright2();
+    } else{
+ carStop();
+    }
+  } else if (leftV == 1 && centerV == 1 && rightV == 1) {
+    carpull();
+  } else if (leftV == 0 && centerV == 0 && rightV == 1) {
+    carturnleft();
+  } else if (leftV == 1 && centerV == 0 && rightV == 0) {
+    carturnright();
+  } else if (leftV == 0 && centerV == 1 && rightV == 1) {
+carforward();
+    carturnleft1();
+  } else if (leftV == 1 && centerV == 1 && rightV == 0) {
+carforward();
+    carturnright1();
+  }
+}
+else{
+ carturnleft3();
+}
+void carforward() {
+  analogWrite(ENA, Speed);
+  analogWrite(ENB, Speed);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+void carturnleft() {
+  sag =1;
+  sol = 0;
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+void carturnright() {
+  sol = 1;
+  sag = 0;
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
+void carStop() {
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
+void carfind(){
+x=0;
+while(x<=derece){
+sagkol.write(2);
+delay(10);
+solkol.write(2)
+delay(10);
+x++;
+}
+on=1;
+ }
+void carturnleft1() {
+  sag = 1;
+  sol =0 ;
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+void carturnright1() {
+  sol=1;
+  sag=0;
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
+
+void carturnleft2() {
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
+void carturnright2() {
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
+}
+void carturnleft3() {
+  analogWrite(ENA, Speedd);
+  analogWrite(ENB, Speedd);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+}
